@@ -4,4 +4,8 @@
 
 -- Example in Haskell:
 
- 
+penultimate :: [a] -> a
+penultimate [] = error "no result for empty"
+penultimate (x:[]) = error "no result for one item list"
+penultimate (x:l:[]) = x
+penultimate (x:xs) = penultimate xs
